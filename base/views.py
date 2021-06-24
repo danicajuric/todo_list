@@ -51,6 +51,7 @@ class TaskList(LoginRequiredMixin, ListView):
         if search_input:
             context['tasks'] = context['tasks'].filter(
                 title__icontains=search_input)
+                #ako želimo tražiti samo po početnoj riječi __startswith
         
         context['search_input'] = search_input 
         return context
